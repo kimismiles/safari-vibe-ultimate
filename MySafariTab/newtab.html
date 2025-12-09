@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>New Tab</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <section class="group" id="section-favorites">
+            <div class="group-header" data-target="favorites">
+                <h3>个人收藏</h3>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="group-wrapper" id="wrap-favorites">
+                <div class="group-inner">
+                    <div id="grid" class="grid-container"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="group" id="section-suggestions">
+            <div class="group-header" data-target="suggestions">
+                <h3>建议</h3>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="group-wrapper" id="wrap-suggestions">
+                <div class="group-inner">
+                    <div id="suggestion-grid" class="suggestion-grid"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="group" id="section-recent">
+            <div class="group-header" data-target="recent">
+                <h3>最近关闭</h3>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="group-wrapper" id="wrap-recent">
+                <div class="group-inner">
+                    <div id="recent-list" class="recent-grid"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="toolbar">
+        <div class="toolbar-hotspot"></div>
+        <div id="toolbar-menu" class="toolbar-menu hidden">
+            <div class="menu-section">
+                <div class="menu-title">外观模式</div>
+                <div class="theme-switcher">
+                    <button class="theme-btn active" data-mode="auto" title="跟随系统">◑ 自动</button>
+                    <button class="theme-btn" data-mode="light" title="浅色">☀</button>
+                    <button class="theme-btn" data-mode="dark" title="深色">☾</button>
+                </div>
+                <div class="bg-upload-group">
+                    <label class="bg-btn secondary">🌅 浅色壁纸<input type="file" id="bg-file-light" accept="image/*" hidden></label>
+                    <label class="bg-btn secondary">🌃 深色壁纸<input type="file" id="bg-file-dark" accept="image/*" hidden></label>
+                </div>
+                <button id="bg-reset" class="bg-btn text-only">↺ 恢复默认纯色背景</button>
+            </div>
+            <div class="menu-divider"></div>
+            <div class="menu-section">
+                <div class="menu-title">显示设置</div>
+                <label class="toggle-row"><span>个人收藏</span><input type="checkbox" id="check-favorites" checked></label>
+                <label class="toggle-row"><span>建议</span><input type="checkbox" id="check-suggestions" checked></label>
+                <label class="toggle-row"><span>最近关闭</span><input type="checkbox" id="check-recent" checked></label>
+                <div class="menu-divider-sub"></div>
+                <label class="toggle-row"><span>自动隐藏设置按钮</span><input type="checkbox" id="check-autohide"></label>
+            </div>
+            <div class="menu-divider"></div>
+            <button id="tool-refresh" class="menu-action">↻ 重新嗅探高清图标</button>
+            <button id="tool-add" class="menu-action">＋ 添加网站</button>
+            </div>
+        <button id="toolbar-toggle" class="toolbar-btn">⚙</button>
+    </div>
+
+    <div id="context-menu" class="context-menu hidden">
+        <div class="menu-item" id="ctx-edit">✎ 编辑</div>
+        <div class="menu-divider-sub"></div>
+        <div class="menu-item danger" id="ctx-delete">× 删除</div>
+    </div>
+
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="modal-title">网站详情</h2>
+            <div class="input-group">
+                <label>网址 <span id="url-status" class="status-text"></span></label>
+                <input type="url" id="site-url" placeholder="https://...">
+            </div>
+            <div class="input-group">
+                <label>名称</label>
+                <input type="text" id="site-title" placeholder="自动获取...">
+            </div>
+            <div class="input-group">
+                <label>图标</label>
+                <div class="upload-box">
+                    <input type="text" id="site-icon-custom" placeholder="粘贴图片 URL">
+                    <div class="or-divider">或</div>
+                    <label class="file-btn">上传图片<input type="file" id="site-icon-file" accept="image/*" hidden></label>
+                </div>
+                <div id="file-status" class="file-status"></div>
+            </div>
+            <div class="modal-buttons">
+                <button id="cancel-btn" class="btn secondary">取消</button>
+                <button id="save-btn" class="btn primary">保存</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
