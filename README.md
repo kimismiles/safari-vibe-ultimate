@@ -1,6 +1,6 @@
 # Safari Vibe Ultimate
 
-Safari Vibe Ultimate 是一个极简风格的 Firefox/Chrome 新标签页扩展，灵感来源于 Safari 的起始页设计。它集成了原生书签同步、实时浏览建议和最近关闭标签页功能。
+Safari Vibe Ultimate 是一个极简风格的 Firefox新标签页扩展，灵感来源于 Safari 的起始页设计。它集成了原生书签同步、实时浏览建议和最近关闭标签页功能。
 
 ![Screenshot](screenshot.png) ## ✨ 主要功能
 
