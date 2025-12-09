@@ -1,6 +1,0 @@
-.DS_Store
-.idea/
-.vscode/
-*_archive.zip
-node_modules/
-npm-debug.log
